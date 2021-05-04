@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <button @click="save">Imprimir</button>
+    <div class="no-print-space">
+      <button class="btn-print" @click="save">Imprimir</button>
+    </div>
     <div class="ticket"  ref="outputRef">
       <div class="stub">
         <div class="top">
@@ -74,6 +76,30 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.no-print-space {
+  padding: 2em;
+}
+.btn-print {
+  border: none;
+  padding: 1em;
+  border-radius: 1em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: rgb(0, 219, 201);
+  color: #fff;
+  cursor: pointer;
+
+  transition: .5s;
+}
+.btn-print:hover {
+  transform: scale(1.1);
+}
 .ticket {
   width: 100%;
   height: auto;
